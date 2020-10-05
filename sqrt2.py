@@ -10,53 +10,46 @@
 # equation f(x) = x^2 - 2
 
 
+aold = 1
+anew = 0
+bold = 1
+bnew = 0
 
-output_string = "1."
+its = 100
 
-b = 0
-c= 1
 
-a = 1
-tmp = 1 
+for i in range(0, its):
+    anew = aold + 2*bold
+    bnew = aold + bold
 
-while(tmp*tmp <= 2):
-    tmp = a + (b * 10**(-c))
-    b +=1
+    aold = anew
+    bold = bnew
+
+print(anew // bnew )
+print(anew % bnew)
+
+output_string = str(anew // bnew) + "."
+
+anew = (anew % bnew) * 10
+
+for i in range(1, 66):
+    output_string += str(anew//bnew)
+    anew = (anew % bnew) * 10
+
     
-output_string += str(b-2)
+
 print(output_string)
 
-a = tmp - 1 * 10**(-c)
-b = 0
-c += 1
-tmp = 1
+
+
+
+
 
 #print(a)
 #print(a*a)
 
-while(tmp*tmp <= 2):
-    tmp = a + (b * 10**(-c))
-    b +=1
 
-output_string += str(b-2)
-print(output_string)
 
-a = tmp - 1 * 10**(-c)
-b = 0
-c += 1
-tmp = 1
 
-print(a)
-print(a*a)
 
-while(tmp*tmp <= 2):
-    tmp = a + (b * 10**(-c))
-    b +=1
-
-output_string += str(b-2)
-print(output_string)
-
-a = tmp - 1 * 10**(-c)
-b = 0
-c += 1
 
