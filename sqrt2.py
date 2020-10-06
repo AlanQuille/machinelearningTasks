@@ -1,55 +1,57 @@
-# This is the raw file for the sqrt2 algorithm code
-# The final version will go in the jupyter notebook
+# sqrt2 function definition, calculates sqrt(2)
+# through long division and returns a string 
+# with the digits of sqrt(2). sqrt2 takes in its, 
+# which is number of iterations of
+# the continued fractions recursive algorithm
+# and prec which indicates to how many decimal
+# places the string with the digits of sqrt(2)
+# to be returned has
+def sqrt2(its, prec):
 
-# This code uses the Newton-Raphson method to compute
-# the roots of a function, which will be manipulated
-# to calculate the square root.
+    # pold is the numerator at previous step, pnew is numerator at next step
+    pold = 1
+    pnew = 0
 
-# It is manipulated thus: finding the square root
-# of 2 is equivalent to finding the roots of the 
-# equation f(x) = x^2 - 2
+    # qold is the denominator at previous step, qnew is denominator at next step
+    qold = 1
+    qnew = 0
 
+    # This calculates an approximation of sqrt(2) as a rational number
+    # with pnew and pold as numerators (in the next and previous step
+    # respectively) and qnew and qold as denominators (in the next and 
+    # previous steps respectively)
+    for i in range(0, its):
 
-aold = 1
-anew = 0
-bold = 1
-bnew = 0
+        # This is the recursion algorithm, derived from
+        # the formula for continued fractions
+        pnew = pold + 2*qold
+        qnew = pold + qold
 
-its = 100
+        # Make the new numerator and denominator
+        # equal the old numerator and denominator
+        # for the next step in the loop
+        pold = pnew
+        qold = qnew
 
+    # This appends the first digit of sqrt(2)
+    # to output_string (the string to be
+    # returned)
+    output_string = str(pnew // qnew) + "."
 
-for i in range(0, its):
-    anew = aold + 2*bold
-    bnew = aold + bold
+    # This is the first step in the long division algorithm
+    # pnew is set to the remainder of pnew and qnew after
+    # division and multipled by ten for the first decimal
+    # place
+    pnew = (pnew % qnew) * 10
 
-    aold = anew
-    bold = bnew
+    # This performs the long division algorithm for each decimal place
+    # (defined by prec) and appends the digits of sqrt(2) 
+    # digit by digit to the output_string, which is returned 
+    # at the end of the function
+    for i in range(1, prec):
+        output_string += str(pnew//qnew)
+        pnew = (pnew % qnew) * 10
 
-print(anew // bnew )
-print(anew % bnew)
-
-output_string = str(anew // bnew) + "."
-
-anew = (anew % bnew) * 10
-
-for i in range(1, 66):
-    output_string += str(anew//bnew)
-    anew = (anew % bnew) * 10
-
-    
-
-print(output_string)
-
-
-
-
-
-
-#print(a)
-#print(a*a)
-
-
-
-
-
-
+    # This returns the string, which has prec decimal places
+    # of sqrt(2)
+    return output_string
