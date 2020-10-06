@@ -19,7 +19,7 @@ def sqrt2(its, prec):
     # This calculates an approximation of sqrt(2) as a rational number
     # with pnew and pold as numerators (in the next and previous step
     # respectively) and qnew and qold as denominators (in the next and 
-    # previous steps respectively)
+    # previous steps respectively) for its iterations 
     for i in range(0, its):
 
         # This is the recursion algorithm, derived from
@@ -48,7 +48,7 @@ def sqrt2(its, prec):
     # (defined by prec) and appends the digits of sqrt(2) 
     # digit by digit to the output_string, which is returned 
     # at the end of the function
-    for i in range(1, prec):
+    for i in range(1, prec+1):
         output_string += str(pnew//qnew)
         pnew = (pnew % qnew) * 10
 
