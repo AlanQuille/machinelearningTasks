@@ -14814,7 +14814,7 @@ The average marginal difference between the real and calculated standard deviati
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Task-4:-k-means-clustering">Task 4: k-means clustering<a class="anchor-link" href="#Task-4:-k-means-clustering">&#182;</a></h2><p>The task was accomplished using the KMeans function from the <strong>sklearn.clusters</strong> module.<a href="#ref9">9</a></p>
+<h2 id="Task-4:-k-means-clustering">Task 4: k-means clustering<a class="anchor-link" href="#Task-4:-k-means-clustering">&#182;</a></h2><p>The task was accomplished using the KMeans function from the <strong>sklearn.clusters</strong> module <a href="#ref9">9</a>.</p>
 <p>The task is to partition the Iris flower dataset into clusters. This is accomplished using k-means clustering. K-means clustering takes an unlabeled dataset with more than one dimension and finds a preset number of clusters which best divides the data in the dataset <a href="#ref10">10</a>. The k-means algorithm works by:</p>
 <ol>
 <li>Randomly selecting k data points from the dataset (initial cluster point)</li>
@@ -15465,7 +15465,7 @@ Name: species, dtype: object
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>This is very accurate, as expected since the data was already divided into 3 clusters (the species of flower).</p>
 <p>The problem with using the entire dataset for training (as was done here) is the problem of overfittting i.e. it fits the training dataset accurately but does not predict future values accurately.</p>
-<p>In order to rectify this the initial dataset can be divided into training and testing data. The clustering is performed on the training data and then the accuracy is calculated on the testing data. This is done using the train_test_split function from the model_selection package in sklearn. <a href="#ref11">11</a> The size of the testing data is 33% of the total data in this instance and the size of the training data is 66% of the total data:</p>
+<p>In order to rectify this the initial dataset can be divided into training and testing data. The clustering is performed on the training data and then the accuracy is calculated on the testing data. This is done using the train_test_split function from the model_selection package in the <strong>sklearn</strong> module. <a href="#ref11">11</a> The size of the testing data is 33% of the total data in this instance and the size of the training data is 66% of the total data:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15577,8 +15577,8 @@ Name: species, dtype: object
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The accuracy of this model is evaluated by getting predicted values of y_test using X_test and the predict function of kmeans3. Then the predicted and actual values of y_test are used to create a classification report using sklearn.metrics.</p>
-<p>This produces the precision, recall, f1_score and support scores. Precision is the number of true positives divided by the number of true and false positives. Recall is the number of true positives over the number of true positives and false negatvies. The f1 score is the harmonic mean of the two and the support is the number of occurences of each class in y_test <a href="#ref12">12</a>.</p>
+<p>The accuracy of this model is evaluated by getting predicted values of <strong>y_test</strong> using <strong>X_test</strong> and the predict function of kmeans3. Then the predicted and actual values of <strong>y_test</strong> are used to create a classification report using the <strong>sklearn.metrics</strong> module.</p>
+<p>This produces the precision, recall, f1_score and support scores. Precision is the number of true positives divided by the number of true and false positives. Recall is the number of true positives over the number of true positives and false negatvies. The f1 score is the harmonic mean of the two and the support is the number of occurences of each class in <strong>y_test</strong> <a href="#ref12">12</a>.</p>
 <p>Afterwards, the overall accuracy is calculated by classification report:</p>
 
 </div>
@@ -15589,8 +15589,8 @@ Name: species, dtype: object
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="c1"># predicted values of y_test using X_test</span>
 <span class="n">y_pred</span> <span class="o">=</span>  <span class="n">kmeans3</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="c1">#print(confusion_matrix(y_test, y_pred))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
 </pre></div>
 
@@ -15711,7 +15711,7 @@ weighted avg       0.92      0.90      0.90        50
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As can be seem from the graph, the "elbow" is clearly located at k=3. This confirms that the optimal number of clusters for the Iris flower dataset is 3, which is the number of species of flower.</p>
+<p>As can be seen from the graph, the "elbow" is clearly located at k=3. This confirms that the optimal number of clusters for the Iris flower dataset is 3, which is the number of species of flower.</p>
 
 </div>
 </div>
