@@ -1,6 +1,0 @@
-1 https://www.westga.edu/academics/research/vrc/assets/docs/the_normal_distribution_notes.pdf
-2. https://brilliant.org/wiki/log-normal-distribution/
-3. https://stockopter.com/lognormal-random-walk-model-for-stock-prices-part-1/
-4. https://courses.lumenlearning.com/introstats1/chapter/the-exponential-distribution/
-5. https://en.wikipedia.org/wiki/Chi-squared_test
-6. https://towardsdatascience.com/gentle-introduction-to-chi-square-test-for-independence-7182a7414a95
